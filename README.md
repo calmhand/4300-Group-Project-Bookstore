@@ -1,4 +1,4 @@
-# 4300-Group-Project-Bookstore
+# Novel Reads Bookstore Project
 Spring Project for CSCI4300 Web Development
 
 
