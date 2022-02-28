@@ -16,6 +16,7 @@ ER Diagram (Account Required): https://lucid.app/lucidchart/fb2668ea-7a30-4ebf-a
 
 Relational Schema Example (Required for ER Diagram): https://www.geeksforgeeks.org/relation-schema-in-dbms/
 
+ER/Relation Diagrams (Google Doc): https://docs.google.com/document/d/1AQrUnhA19POXkxTkROAFGiuhqtJKnfJDx7UUG1KeMFs/edit?usp=sharing
 
 Group Contacts:
 
