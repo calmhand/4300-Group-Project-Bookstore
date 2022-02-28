@@ -2,7 +2,7 @@
 Spring Project for CSCI4300 Web Development
 
 
-Next Assignment: Submit ER/Relational Schema Diagrams along with previous updated deliverables. Due Mar 1.
+Next Assignment: Submit ER/Relational Schema Diagrams along with previous updated deliverables. Due Mar 2.
 
 Deliverable Links: 
 
