@@ -2,12 +2,13 @@
 Spring Project for CSCI4300 Web Development
 
 
-Next Assignment: Submit ER/Relational Schema Diagrams and a Navigational Chart along with previous updated deliverables. Due Mar 2.
+Next Assignment: Submit ER/Relational Schema Diagrams, Navigational Chart, CRUD Matrix along with previous updated deliverables. Due Mar 2.
 
 Deliverable Links: 
 
 GAANT Group Schedule: https://docs.google.com/spreadsheets/d/1y6GsNiQluFIaRh6FgEpaM1wcxBg_5p3eRU-NrzwQEEk/edit?usp=sharing
 
+CRUD Matrix Example: 
 
 UML/GDD Diagram: https://docs.google.com/document/d/1CJcnRiGcdRcvcquHwxfAKaoXLzCL7Jgu1pRIuxpa_Ok/edit?usp=sharing
 
