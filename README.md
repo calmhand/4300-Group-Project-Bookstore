@@ -8,7 +8,7 @@ Deliverable Links:
 
 GAANT Group Schedule: https://docs.google.com/spreadsheets/d/1y6GsNiQluFIaRh6FgEpaM1wcxBg_5p3eRU-NrzwQEEk/edit?usp=sharing
 
-CRUD Matrix Example: 
+CRUD Matrix Example: http://www.unified-am.com/UAM/UAM/guidances/guidelines/uam_crud-matrix_F56BDB11.html
 
 UML/GDD Diagram: https://docs.google.com/document/d/1CJcnRiGcdRcvcquHwxfAKaoXLzCL7Jgu1pRIuxpa_Ok/edit?usp=sharing
 
