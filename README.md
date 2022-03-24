@@ -2,7 +2,7 @@
 Spring Project for CSCI4300 Web Development
 
 
-Next Assignment: Submit ER/Relational Schema Diagrams, Navigational Chart, CRUD Matrix along with previous updated deliverables. Due Mar 2.
+Next Assignment: Submit a working Login and Registration system. Due Mar 28.
 
 Deliverable Links: 
 
