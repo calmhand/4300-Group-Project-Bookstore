@@ -1,6 +1,7 @@
 # Novel Reads Bookstore Project
 Spring Project for CSCI4300 Web Development
 
+<b>SEE PROJECT PLAN PROPOSAL PDF FOR GUIDANCE</b>
 
 Next Assignment: Submit a working Login and Registration system. Due Mar 28.
 
