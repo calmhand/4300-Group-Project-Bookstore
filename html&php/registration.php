@@ -14,7 +14,7 @@
     </head>
     <body>
         <form id="formStyle" action="registration.php" method="post">
-            <p>Have an account? <a href="login.php">Login</a></p>
+            <p style="font-size:large;">Have an account? <a href="login.php">Login</a></p>
             <div>
                 <label>First Name</label><br>
                 <input type="text" name="Fname" value="" maxlength="50" required="">
