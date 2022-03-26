@@ -1,7 +1,7 @@
 <?php 
     require "../php/connectToDBAdmin.php"; // replace w/ login for all admins
     session_start();
-    
+
     $errs = array();
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
@@ -13,6 +13,7 @@
         if (empty($pass)) {
             array_push($errs, "Password required.");
         }
+        
         if (count($errs) == 0) { // no errors? log user in.
             $pass = md5($pass);
             $loginUser = "SELECT * FROM `Users` WHERE `userEmail` = '$email' AND `userPass` = '$pass';";

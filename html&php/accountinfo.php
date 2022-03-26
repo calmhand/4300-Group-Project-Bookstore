@@ -1,11 +1,51 @@
 <?php
     require "../php/connectToDBAdmin.php";
     session_start();
+    $errs = array();
 
     if ($_SESSION['success'] == 0) {
         header('location: login.php');
-    } else if ($_SESSION['success'] == 1) {
+    } else if ($_SESSION['success'] == 1) { // if user is logged in
         // proceed
+        if (isset($_POST['logout'])) { // if user wants to log out
+            session_destroy();
+            unset($_SESSION['success']);
+            unset($_SESSION['email']);
+            header("location: login.php");
+        } elseif (isset($_POST['reset'])) { // if user wants to reset their password
+            $pass = $_POST['password'];
+            $new_pass = $_POST['npassword'];
+            $old_pass = "";
+
+            if (empty($pass)) {
+                array_push($errs, "Password required.");
+            }
+
+            if (empty($new_pass)) {
+                array_push($errs, "New password required.");
+            }
+
+            if (count($errs) == 0) { // if no prior errors
+                // query the logged in user's information
+                $getUser = "SELECT * FROM `Users` WHERE userEmail = '$_SESSION[email]'";
+                $ans = mysqli_query($conn, $getUser);
+                $row = $ans->fetch_assoc();
+                
+                if (mysqli_num_rows($ans) == 1) { // on successful query
+                    if ($row["userPass"] == md5($pass)) { // do the old passwords (encrypted) match?
+                        // update in mySQL
+                        $new_pass = md5($new_pass);
+                        $updatePass = "UPDATE `Users` SET `userPass` = '$new_pass' WHERE `userEmail` = '$_SESSION[email]'";
+                        // logout
+                        mysqli_query($conn, $updatePass);
+                        session_destroy();
+                        unset($_SESSION['email']);
+                        unset($_SESSION['success']);
+                        header("location: login.php");
+                    }
+                }
+            }
+        }
     }
 ?>
 
@@ -22,21 +62,27 @@
 
         <h2 id='accountHead'>Account Info</h2>
         <div class='accountDetails'>
-            <h4>Email: </h4>
-            <h4>First Name: </h4>
-            <h4>Last Name: </h4>
+            <h5>Email: <?php echo $_SESSION['email'] ?></h5>
+            <!-- <h4>First Name: </h4>
+            <h4>Last Name: </h4> -->
+        </div>
+
+        <div>
+            <form id='formStyle' action='./accountinfo.php' method='post'>
+                <input type=submit name=logout value="Logout">
+            </form>
         </div>
 
         <h2 id='accountHead'>Reset Password</h2>
         <div>
             <form id='formStyle' action='./accountinfo.php' method='post'>
                 <div>
-                    <label>Current Password</label><br>
-                    <input type=password name=password value="Old Password" maxlength="16" required>
+                    <label>Old Password</label><br>
+                    <input type=password name=password value="" maxlength="16" required>
                 </div>
                 <div>
                     <label>New Password</label><br>
-                    <input type=password name=password value="New Password" maxlength="16" required>
+                    <input type=password name=npassword value="" maxlength="16" required>
                 </div><br>
                 <input type=submit name=reset value="Reset Password">
             </form>

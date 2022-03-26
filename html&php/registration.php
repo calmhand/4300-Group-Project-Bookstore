@@ -20,7 +20,7 @@
             $pass = md5($pass);
             $addUser = "INSERT INTO `Users` (`userName`, `userLast`, `userPass`, `userEmail`, `userCell`) VALUES ('$first', '$last', '$pass', '$email', '$mobile')";
             mysqli_query($conn, $addUser);
-            $_SESSION['user'] = $first;
+            $_SESSION['first'] = $first;
             $_SESSION['success'] = "logged in";
             header('location: index.php');
         }

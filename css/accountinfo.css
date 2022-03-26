@@ -11,7 +11,6 @@ body.main {
 
 div.accountDetails {
     text-align: center;
-    width: 75%;
 }
 
 #formStyle {
@@ -23,7 +22,7 @@ div.accountDetails {
 input {
     border: 2px solid black;
     border-radius: 5px;
-    width: 75%;
+    width: 44%;
     padding: 12px 10px;
     margin: 8px 0;
     box-sizing: border-box;
