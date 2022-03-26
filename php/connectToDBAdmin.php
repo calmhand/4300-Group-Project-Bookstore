@@ -1,6 +1,6 @@
 <?php
-    DEFINE ('DB_USER', 'calm');
-    DEFINE ('DB_PASS', '200257847');
+    DEFINE ('DB_USER', 'root');
+    DEFINE ('DB_PASS', '');
     DEFINE ('DB_HOST', 'localhost');
     DEFINE ('DB_NAME', 'NovelReads');
     
