@@ -1,6 +1,30 @@
 <?php 
-    require "../php/connectToDBAdmin.php"; // replace w/ login for all admins
+    require_once "../php/connectToDBAdmin.php"; // replace w/ login for all admins
 
+    $first = $last = $email = $mobile = $pass = $confirm_pass = "";
+    $errs = array();
+
+    if (isset($_POST['register'])) {
+        $first = mysqli_real_escape_string($conn, $_POST['Fname']);
+        $last = mysqli_real_escape_string($conn, $_POST['Lname']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $mobile = mysqli_real_escape_string($conn, $_POST['phone']);
+        $pass = mysqli_real_escape_string($conn, $_POST['password']);
+        $confirm_pass = mysqli_real_escape_string($conn, $_POST['cpassword']);
+
+        if ($pass != $confirm_pass) {
+            array_push($errs, "Passwords do not match.");
+        }
+        
+        if (count($errs) == 0) {
+            $pass = md5($pass);
+            $addUser = "INSERT INTO `Users` (`userName`, `userLast`, `userPass`, `userEmail`, `userCell`) VALUES ('$first', '$last', '$pass', '$email', '$mobile')";
+            mysqli_query($conn, $addUser);
+            $_SESSION['user'] = $first;
+            $_SESSION['success'] = "logged in";
+            header('location: index.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +37,7 @@
         <title>NRs - Registration</title>
     </head>
     <body>
-        <form id="formStyle" action="registration.php" method="post">
+        <form class="formStyle" action="registration.php" method="post">
             <p style="font-size:large;">Have an account? <a href="login.php">Login</a></p>
             <div>
                 <label>First Name</label><br>
@@ -37,16 +61,16 @@
 
             <div>
                 <label>Password</label><br>
-                <input type="password" name="password" value="" maxlength="8" required="">
+                <input type="password" name="password" value="" maxlength="16" required="">
             </div>
 
             <div>
                 <label>Confirm Password</label><br>
-                <input type="password" name="cpassword" value="" maxlength="8" required="">
+                <input type="password" name="cpassword" value="" maxlength="16" required="">
             </div>
 
             <div>
-                <input type="submit" name="signup" value="Register">
+                <input type="submit" name="register" value="Register">
             </div><br><br>
             <br>
 
@@ -54,8 +78,8 @@
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
+                <a href="./index.php" class="menu">About</a> <!-- change later -->
             </p>
-            <span class="foot">Novel Reads</span>
             <p class="footer-text-right">
                 <a href="./accountinfo.php" class="menu">Account</a>
                 <a href="./checkout.php" class="menu">Cart</a>

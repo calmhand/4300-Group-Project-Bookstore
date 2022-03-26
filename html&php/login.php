@@ -1,5 +1,31 @@
 <?php 
     require "../php/connectToDBAdmin.php"; // replace w/ login for all admins
+    session_start();
+    
+    $errs = array();
+    if (isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+
+        if (empty($email)) {
+            array_push($errs, "Email required.");
+        }
+        if (empty($pass)) {
+            array_push($errs, "Password required.");
+        }
+        if (count($errs) == 0) { // no errors? log user in.
+            $pass = md5($pass);
+            $loginUser = "SELECT * FROM `Users` WHERE `userEmail` = '$email' AND `userPass` = '$pass';";
+            $ans = mysqli_query($conn, $loginUser);
+            if (mysqli_num_rows($ans) == 1) {
+                $_SESSION['email'] = $email;
+                $_SESSION['success'] = 1;
+                header('location: index.php');
+            } else {
+                array_push($errs, "Wrong email/password combination.");
+            }
+        }
+    }
 
 ?>
 
@@ -16,13 +42,13 @@
         <form id="formStyle" action="./login.php" method="post">
 
             <div>
-                <label>Username</label><br>
-                <input type="username" name="name" value="" maxlength="30" required>
+                <label>Email</label><br>
+                <input type="email" name="email" value="" maxlength="30" required>
             </div><br><br>
             
             <div>
                 <label>Password</label><br>
-                <input type="password" name="password" value="" maxlength="8" required>
+                <input type="password" name="password" value="" maxlength="16" required>
             </div><br><br>
 
             <div>
@@ -38,8 +64,8 @@
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
+                <a href="./index.php" class="menu">About</a> <!-- change later -->
             </p>
-            <span class="foot">Novel Reads</span>
             <p class="footer-text-right">
                 <a href="./accountinfo.php" class="menu">Account</a>
                 <a href="./checkout.php" class="menu">Cart</a>

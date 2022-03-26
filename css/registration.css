@@ -1,6 +1,7 @@
 body {
     background-color: #C2A887;
     font-family: 'Open Sans';font-size: 15px;
+    margin-bottom: 60px;
 }
 
 header {
@@ -8,7 +9,7 @@ header {
     
 }
 
-#formStyle {
+form.formStyle {
     text-align: center;
     width: 100%;
     display: inline-block;

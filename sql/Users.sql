@@ -4,9 +4,6 @@ CREATE TABLE `Users` (
     `userLast` VARCHAR(255) NOT NULL,
     `userPass` VARCHAR(255),
     `userEmail` VARCHAR(255),
-    `userCell` INT NOT NULL,
+    `userCell` VARCHAR(10) NOT NULL,
     PRIMARY KEY (`userID`)
 );
-
-INSERT INTO `Users` VALUES 
-('1217', 'Johnny', 'Admin', 'alex1217', 'jmg49760@uga.edu', 1234567890);
