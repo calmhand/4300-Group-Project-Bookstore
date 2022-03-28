@@ -21,7 +21,8 @@
             $addUser = "INSERT INTO `Users` (`userName`, `userLast`, `userPass`, `userEmail`, `userCell`) VALUES ('$first', '$last', '$pass', '$email', '$mobile')";
             mysqli_query($conn, $addUser);
             $_SESSION['first'] = $first;
-            $_SESSION['success'] = "logged in";
+            $_SESSION['email'] = $email;
+            $_SESSION['success'] = 1;
             header('location: index.php');
         }
     }

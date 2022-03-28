@@ -1,9 +1,9 @@
 <?php
     require "../php/connectToDBAdmin.php";
-    session_start();
-    $errs = array();
+    session_start(); // begin session.
+    $errs = array(); // an array that holds any possible errors. Will be implemented later.
 
-    if ($_SESSION['success'] == 0) {
+    if ($_SESSION['success'] == 0) { // if the user is not logged in
         header('location: login.php');
     } else if ($_SESSION['success'] == 1) { // if user is logged in
         // proceed
