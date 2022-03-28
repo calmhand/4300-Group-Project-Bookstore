@@ -15,7 +15,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, inital-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/home.css">
     </head>
     <main>
         <body>

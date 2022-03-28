@@ -9,6 +9,7 @@
         // proceed
         if (isset($_POST['logout'])) { // if user wants to log out
             session_destroy();
+            // setcookie("loggedin", time()-1000);
             unset($_SESSION['success']);
             unset($_SESSION['email']);
             header("location: login.php");
