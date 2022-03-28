@@ -21,7 +21,7 @@
             if (mysqli_num_rows($ans) == 1) {
                 $_SESSION['email'] = $email;
                 $_SESSION['success'] = 1;
-                // setcookie("loggedin", TRUE, time()+6);
+                setcookie("loggedin", TRUE, time()+6);
                 header('location: index.php');
             } else {
                 array_push($errs, "Wrong email/password combination.");
