@@ -25,6 +25,7 @@ REFERENCES USED TO ASSIST IN THE IMPLEMENTATION:
 - w3schools, stackoverflow, eLC powerpoints.
 
 HOW TO INSTALL AND RUN:
+- Github: https://github.com/calmhand/4300-Group-Project-Bookstore
 - Move the entire folder into XAMPP's 'htdocs' path.
 - Start XAMPP and activate all services.
 - Go to the network tab in XAMPP and turn on a port.
