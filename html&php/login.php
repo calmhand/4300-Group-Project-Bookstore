@@ -1,5 +1,6 @@
 <?php 
     require "../php/connectToDBAdmin.php";
+    $handler = new NovelConnection();
     session_start(); // begins session
 
     $errs = array();
@@ -17,8 +18,10 @@
         if (count($errs) == 0) { // no errors? log user in.
             $pass = md5($pass);
             $loginUser = "SELECT * FROM `Users` WHERE `userEmail` = '$email' AND `userPass` = '$pass';";
-            $ans = mysqli_query($conn, $loginUser);
-            if (mysqli_num_rows($ans) == 1) {
+            // $ans = mysqli_query($conn, $loginUser);
+            $ans = $handler->runQuery($loginUser);
+            if ($handler->numRows($loginUser) == 1) {
+                $_SESSION['id'] = $ans[0]['userID'];
                 $_SESSION['email'] = $email;
                 $_SESSION['success'] = 1;
                 setcookie("loggedin", TRUE, time()+6);
@@ -69,8 +72,13 @@
                 <a href="./index.php" class="menu">About</a> <!-- change later -->
             </p>
             <p class="footer-text-right">
+                <?php 
+                if ($_SESSION['success'] == 1) {
+                ?>
+                    <a href="./collection.php" class="menu">Collection</a>
+                <?php
+                }?>
                 <a href="./accountinfo.php" class="menu">Account</a>
-                <a href="./checkout.php" class="menu">Cart</a>
             </p>
         </div>
     </body>

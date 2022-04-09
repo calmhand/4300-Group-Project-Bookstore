@@ -7,11 +7,11 @@
         header('location: login.php');
     } else if ($_SESSION['success'] == 1) {
         if (!empty($_GET["action"])) {
-            if ($_GET["action"] == "add") { // if book is unrented
-                // add book to rented book db
-                $code = $_GET["ISBN"];
-                $selectQuery = "SELECT * FROM `Books` WHERE `bookISBN` = '$code'";
-                $row = $handler->runQuery($selectQuery);
+            if ($_GET["action"] == "return") {
+                // re-add book to 'books' db.
+                $code = $_GET['ISBN'];
+                $getBook = "SELECT * FROM `RentedBooks` WHERE `bookISBN` = '$code'";
+                $row = $handler->runQuery($getBook);
 
                 $name = $row[0]['bookName'];
                 $author = $row[0]['bookAuthor'];
@@ -19,21 +19,20 @@
                 $year = $row[0]['year'];
                 $genre = $row[0]['genreID'];
 
-                // adds to rentedbook db
-                $addQuery = "INSERT INTO `RentedBooks` VALUES (
-                    '$_SESSION[id]', 
-                    '$code', 
+                $addBook = "INSERT INTO `Books` VALUES (
+                    '$code',
                     '$name',
                     '$author',
                     '$publish',
                     '$year',
                     '$genre'
                 )";
-                $handler->executeSingleQuery($addQuery);
-                // remove book from available book db
-                $deleteQuery = "DELETE FROM `Books` WHERE `bookISBN` = '$code'";
+                $handler->executeSingleQuery($addBook);
+
+                // delete book from 'rentedbooks' db
+                $deleteQuery = "DELETE FROM `RentedBooks` WHERE `bookISBN` = '$code'";
                 $handler->executeSingleQuery($deleteQuery);
-                header("location: library.php");
+                header("location: collection.php");
             }
         }
     }
@@ -45,36 +44,36 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="../css/library.css">
+        <link rel="stylesheet" href="../css/collection.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-        <title>NRs - Library</title>
+        <title>NRs - Collection</title>
     </head>
     <body class="site">
-        <!-- <img src="https://covers.openlibrary.org/b/isbn/074754624X-S.jpg"/> -->
-
         <div id="product-grid">
-            <div class="txt-heading"><h3>Books Available To Rent</h3></div>
+            <div class="txt-heading"><h3>Rented Book Collection</h3></div>
             <?php
-            $product_array = $handler->runQuery("SELECT * FROM `Books` ORDER BY 'bookISBN' ASC");
-            if (!empty($product_array)) { 
-                foreach($product_array as $key=>$value) {
+            $collection_array = $handler->runQuery("SELECT * FROM `RentedBooks` WHERE `userID`='$_SESSION[id]' ORDER BY 'bookISBN' ASC");
+            if (!empty($collection_array)) { 
+                foreach($collection_array as $key=>$value) {
             ?>
                 <div class="product-item">
-                    <form method="post" action="library.php?action=add&ISBN=<?php echo $product_array[$key]["bookISBN"]; ?>">
-
+                    <form method="post" action="collection.php?action=return&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>">
                         <div class="product-image">
-                            <img src="https://covers.openlibrary.org/b/isbn/<?php echo $product_array[$key]["bookISBN"];?>-M.jpg">
+                            <img src="https://covers.openlibrary.org/b/isbn/<?php echo $collection_array[$key]["bookISBN"];?>-M.jpg">
                         </div>
 
                         <div class="product-tile-footer">
                             <div class="product-title">
-                                <?php echo $product_array[$key]["bookName"]; ?>
+                                <?php echo $collection_array[$key]["bookName"]; ?>
                             </div>
 
+                            <!-- CHANGE LATER -->
                             <div class="cart-action">
                                 <!-- <input type="text" class="product-quantity" name="quantity" value="1" size="2" /> -->
-                                <input type="submit" value="Rent" class="rentButton" />
+                                <input type="submit" value="Return" class="returnButton" />
+                                <input type="submit" value="Read" class="readButton" />
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -83,6 +82,7 @@
             }
             ?>
         </div>
+
         <div class="footer">
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>

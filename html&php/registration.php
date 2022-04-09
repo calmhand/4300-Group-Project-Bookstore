@@ -82,8 +82,13 @@
                 <a href="./index.php" class="menu">About</a> <!-- change later -->
             </p>
             <p class="footer-text-right">
+                <?php 
+                if ($_SESSION['success'] == 1) {
+                ?>
+                    <a href="./collection.php" class="menu">Collection</a>
+                <?php
+                }?>
                 <a href="./accountinfo.php" class="menu">Account</a>
-                <a href="./checkout.php" class="menu">Cart</a>
             </p>
         </div>
     </body>
