@@ -1,9 +1,88 @@
+/* page */
 body {
     background-color: #C2A887;
     font-family: 'Open Sans';font-size: 18px;
+/*     min-height: 100vh; */
     margin-bottom: 60px;
 }
 
+/* header */
+.home-header {
+    margin: 0px 0px 0px 5px;
+    text-align: center;
+}
+
+/* nav bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: #6D152B;
+}
+  
+li {
+    display: block;
+    color: white;
+    text-align: center;
+    size: 10px;
+    float: left;
+    text-decoration: none;
+}
+
+a.link-space {
+    padding-left: 70px;
+    padding-right: 70px;
+    text-decoration: none;
+}
+
+li a:active {
+    color: black;
+}
+
+li a:visited {
+    color:wheat;
+}
+
+li a:hover {
+    background-color: #C2A887;
+    text-decoration: none;
+}
+
+/* content */
+div.outer {
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
+div.inner {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+
+article.intro {
+    border: 2px solid black;
+    margin: 20px 20px 20px 20px;
+    padding: 40px;
+    width: 200px;
+}
+
+p.text {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: small;
+}
+
+img.home-img {
+    /* float: right; */
+    height: 250px;
+    width: 250px;
+}
+
+/* footer */
 .footer {
     position:fixed;
     bottom:0;

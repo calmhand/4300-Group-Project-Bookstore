@@ -12,13 +12,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/home.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-        <link rel="stylesheet" href="../css/home.css">
     </head>
     <main>
+        <header class="home-header"><h2>Novel Reads Libraries</h2></header>
         <body>
+            <div class="nav-bar">
+                <ul>
+                    <li><a class="link-space" href="">Textbooks</a></li>
+                    <li><a class="link-space" href="">Fiction</a></li>
+                    <li><a class="link-space" href="">Non-Fiction</a></li>
+                    <li><a class="link-space" href="">Comics</a></li>
+                </ul>
+            </div>
+            <div class="outer">
+                <div class="inner">
+                    <article class="intro">
+                        <p class="text">
+                            Welcome to Novel Reads! <br><br>
+                            This is a small online library that hosts a wide array of textbooks, 
+                            novels, and comics.<br><br> 
+                            The books provided are sourced, for free, from around the internet. <br><br>
+                            The goal of this site is to localize books for readers to easily access with worrying about fees or convenience.
+                        </p>
+                    </article>
+                </div>
+                <div class="inner"><img class="home-img" src="../images/newreadinggal.gif" ></div>
+            </div>
             <div class="footer">
                 <p class="footer-text-left">
                     <a href="./index.php" class="menu">Home</a>

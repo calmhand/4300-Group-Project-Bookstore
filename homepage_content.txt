@@ -1,0 +1,7 @@
+Title: Novel Reads Library
+Header: A Novelty Online Library
+
+Intro: Welcome to Novel Reads! This is a small online library
+that hosts a wide array of textbooks, novels, and comics. The books provided
+are sourced, for free, from around the internet. The goal of this site is to
+localize books for readers to easily access with worrying about fees or convenience.
