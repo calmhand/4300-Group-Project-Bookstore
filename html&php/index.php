@@ -53,10 +53,13 @@
                     <?php 
                     if ($_SESSION['success'] == 1) {
                     ?>
-                        <a href="./collection.php" class="menu">Library</a>
+                        <a href="./collection.php" class="menu">Collection</a>
+                        <a href="./accountinfo.php" class="menu">Account</a>
+
                     <?php
+                    } else {
+                        ?><a href="./login.php" class="menu">Login</a><?php
                     }?>
-                    <a href="./accountinfo.php" class="menu">Account</a>
                 </p>
             </div>
         </body>

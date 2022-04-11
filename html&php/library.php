@@ -50,10 +50,8 @@
         <title>NRs - Library</title>
     </head>
     <body class="site">
-        <!-- <img src="https://covers.openlibrary.org/b/isbn/074754624X-S.jpg"/> -->
-
-        <div id="product-grid">
-            <div class="txt-heading"><h3>Books Available To Rent</h3></div>
+        <div class="txt-heading"><h3>Books Available To Rent</h3></div>
+        <div class="book-contain">
             <?php
             $product_array = $handler->runQuery("SELECT * FROM `Books` ORDER BY 'bookISBN' ASC");
             if (!empty($product_array)) { 

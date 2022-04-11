@@ -7,6 +7,10 @@
         header('location: login.php');
     } else if ($_SESSION['success'] == 1) {
         if (!empty($_GET["action"])) {
+            if ($_GET["action"] == "read") {
+                $_SESSION["currentBook"] = $_GET['ISBN'];
+                header("location: ./read.php?ISBN= $_GET[ISBN]");
+            }
             if ($_GET["action"] == "return") {
                 // re-add book to 'books' db.
                 $code = $_GET['ISBN'];
@@ -49,8 +53,8 @@
         <title>NRs - Collection</title>
     </head>
     <body class="site">
+        <div class="txt-heading"><h3>Rented Book Collection</h3></div>
         <div id="product-grid">
-            <div class="txt-heading"><h3>Rented Book Collection</h3></div>
             <?php
             $collection_array = $handler->runQuery("SELECT * FROM `RentedBooks` WHERE `userID`='$_SESSION[id]' ORDER BY 'bookISBN' ASC");
             if (!empty($collection_array)) { 
@@ -69,9 +73,8 @@
 
                             <!-- CHANGE LATER -->
                             <div class="cart-action">
-                                <!-- <input type="text" class="product-quantity" name="quantity" value="1" size="2" /> -->
                                 <input type="submit" value="Return" class="returnButton" />
-                                <input type="submit" value="Read" class="readButton" />
+                                <input type="submit" value="Read" class="readButton" formaction="collection.php?action=read&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>"/>
                             </div>
 
                         </div>
@@ -82,7 +85,7 @@
             }
             ?>
         </div>
-
+        <!-- <embed src="../books/014017897X.pdf" width="800px" height="2100px" /> -->
         <div class="footer">
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>

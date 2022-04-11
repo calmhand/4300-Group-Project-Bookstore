@@ -33,7 +33,9 @@ li {
 a.link-space {
     padding-left: 70px;
     padding-right: 70px;
+    font-size: 18px;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 li a:active {
@@ -47,6 +49,7 @@ li a:visited {
 li a:hover {
     background-color: #C2A887;
     text-decoration: none;
+    font-size: 19px;
 }
 
 /* content */
@@ -109,7 +112,9 @@ img.home-img {
 }
   
 a.menu:hover {
-    background-color: black;
+    background-color: #937754;
+    transition: 0.5s;
+    font-size: 19px;
 }
 
 a.menu:link {

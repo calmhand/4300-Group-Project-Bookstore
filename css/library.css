@@ -1,8 +1,9 @@
 body.site {
     background-color: #C2A887;
     font-family: 'Open Sans';font-size: 18px;
-    min-height: 100vh;
-    margin-bottom: 65vh;
+	height: 100vh;
+/*     min-height: 100vh; */
+/*     margin-bottom: 65vh; */
 }
 
 .txt-heading {
@@ -16,6 +17,12 @@ body.site {
     margin-bottom: 20px;
 }
 
+div.book-contain {
+    height: 100vh;
+	margin: 40px;
+    margin-bottom: 20px;
+}
+
 img {
 	height: 200px;
 	width: 150px;
@@ -24,6 +31,7 @@ img {
 }
 
 .product-item {
+    position: relative;
 	width: 300px;
 	height: 310px;
 	float: left;
