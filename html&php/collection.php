@@ -2,7 +2,7 @@
     require "../php/connectToDBAdmin.php";
     $handler = new NovelConnection();
     session_start();
-
+    
     if ($_SESSION['success'] == 0) { // if the user is not logged in.
         header('location: login.php');
     } else if ($_SESSION['success'] == 1) {

@@ -30,6 +30,7 @@
                     '$genre'
                 )";
                 $handler->executeSingleQuery($addQuery);
+
                 // remove book from available book db
                 $deleteQuery = "DELETE FROM `Books` WHERE `bookISBN` = '$code'";
                 $handler->executeSingleQuery($deleteQuery);
@@ -53,7 +54,11 @@
         <div class="txt-heading"><h3>Books Available To Rent</h3></div>
         <div class="book-contain">
             <?php
-            $product_array = $handler->runQuery("SELECT * FROM `Books` ORDER BY 'bookISBN' ASC");
+            if (!isset($_GET["genre"])) { // If the user wants to view all books...
+                $product_array = $handler->runQuery("SELECT * FROM `Books` ORDER BY 'bookISBN' ASC");
+            } else { // If the user wants to view a specific genre...
+                $product_array = $handler->runQuery("SELECT * FROM `Books` WHERE `genreID` = '$_GET[genre]' ORDER BY 'bookISBN' ASC");
+            }
             if (!empty($product_array)) { 
                 foreach($product_array as $key=>$value) {
             ?>
@@ -70,7 +75,6 @@
                             </div>
 
                             <div class="cart-action">
-                                <!-- <input type="text" class="product-quantity" name="quantity" value="1" size="2" /> -->
                                 <input type="submit" value="Rent" class="rentButton" />
                             </div>
                         </div>

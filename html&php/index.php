@@ -23,10 +23,10 @@
         <body>
             <div class="nav-bar">
                 <ul>
-                    <li><a class="link-space" href="">Textbooks</a></li>
-                    <li><a class="link-space" href="">Fiction</a></li>
-                    <li><a class="link-space" href="">Non-Fiction</a></li>
-                    <li><a class="link-space" href="">Comics</a></li>
+                    <li><a class="link-space" href="./library.php?genre=1">Textbooks</a></li>
+                    <li><a class="link-space" href="./library.php?genre=2">Fiction</a></li>
+                    <li><a class="link-space" href="./library.php?genre=3">Non-Fiction</a></li>
+                    <li><a class="link-space" href="./library.php?genre=4">Comics</a></li>
                 </ul>
             </div>
             <div class="outer">
