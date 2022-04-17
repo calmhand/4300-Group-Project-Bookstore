@@ -39,6 +39,7 @@ input:focus {
     float: none;
 }
 
+/* footer */
 .footer {
     position:fixed;
     bottom:0;
@@ -63,17 +64,24 @@ input:focus {
     word-spacing:20px;
     text-decoration: none;
 }
-  
-a.menu:hover {
-    background-color: black;
+
+a.menu {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s;
 }
 
-a.menu:link {
-    text-decoration: none;
-    color: #C2A887;
+a.menu:active {
+    color: black;
 }
 
 a.menu:visited {
+    color:wheat;
+}
+
+a.menu:hover {
     text-decoration: none;
-    color: #C2A887;
+    transition: 0.5s;    
+    color: black;
+    letter-spacing: 1px;
 }

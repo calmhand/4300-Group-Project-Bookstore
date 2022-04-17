@@ -52,41 +52,52 @@
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <title>NRs - Collection</title>
     </head>
-    <body class="site">
-        <div class="txt-heading"><h3>Rented Book Collection</h3></div>
-        <div id="product-grid">
-            <?php
+    <div class="nav-bar">
+            <ul class="nav-bar">
+                <li><a class="link-space" href="./library.php">All</a></li>
+                <li><a class="link-space" href="./library.php?genre=1">Textbooks</a></li>
+                <li><a class="link-space" href="./library.php?genre=2">Fiction</a></li>
+                <li><a class="link-space" href="./library.php?genre=3">Non-Fiction</a></li>
+                <li><a class="link-space" href="./library.php?genre=4">Comics</a></li>
+            </ul>
+    </div>
+    
+    <div class="txt-heading"><h3>Rented Book Collection</h3></div>
+
+    <div class="product-box"> 
+        <?php
             $collection_array = $handler->runQuery("SELECT * FROM `RentedBooks` WHERE `userID`='$_SESSION[id]' ORDER BY 'bookISBN' ASC");
-            if (!empty($collection_array)) { 
+
+            if (!empty($collection_array)) {
                 foreach($collection_array as $key=>$value) {
-            ?>
-                <div class="product-item">
-                    <form method="post" action="collection.php?action=return&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>">
-                        <div class="product-image">
-                            <img src="https://covers.openlibrary.org/b/isbn/<?php echo $collection_array[$key]["bookISBN"];?>-M.jpg">
-                        </div>
-
-                        <div class="product-tile-footer">
-                            <div class="product-title">
-                                <?php echo $collection_array[$key]["bookName"]; ?>
-                            </div>
-
-                            <!-- CHANGE LATER -->
-                            <div class="cart-action">
-                                <input type="submit" value="Return" class="returnButton" />
-                                <input type="submit" value="Read" class="readButton" formaction="collection.php?action=read&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>"/>
-                            </div>
-
-                        </div>
+        ?>
+                <div class="product-inner-img">
+                    <form method="post" action="collection.php?action=read&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>">
+                        <input title="Click to read!" class="product-img" type="image" src="https://covers.openlibrary.org/b/isbn/<?php echo $collection_array[$key]["bookISBN"];?>-L.jpg"/>
                     </form>
+
+                    <form method="post">
+                        <input class="returnBtn" type="submit" value="Return" formaction="collection.php?action=return&ISBN=<?php echo $collection_array[$key]["bookISBN"]; ?>" class="returnButton" />
+                    </form>
+
+                    <p class="info-link">
+                        <span id="info">Book Info</span>
+                        <p class="hidden-info">
+                            Title: <?php echo $collection_array[$key]["bookName"];?></br>
+                            Author: <?php echo $collection_array[$key]["bookAuthor"];?></br>
+                            Year: <?php echo $collection_array[$key]["year"];?></br>
+                            ISBN: <?php echo $collection_array[$key]["bookISBN"];?></br>
+                        </p>
+                    </p>
                 </div>
+
             <?php
                 }
             }
             ?>
-        </div>
-        <!-- <embed src="../books/014017897X.pdf" width="800px" height="2100px" /> -->
-        <div class="footer">
+    </div>
+
+    <div class="footer">
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
@@ -101,6 +112,5 @@
                 }?>
                 <a href="./accountinfo.php" class="menu">Account</a>
             </p>
-        </div>
-    </body>
+    </div>
 </html>

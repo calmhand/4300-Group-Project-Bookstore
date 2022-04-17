@@ -10,24 +10,31 @@ CREATE TABLE IF NOT EXISTS Books(
 
 -- Fantasy
 INSERT INTO `Books` VALUES
-    ("0747532699", "Harry Potter and the Philosopher's Stone", "J. K. Rowling", "Scholastic", "1997", "2"),
-    ("0747538492", "Harry Potter and the Chamber of Secrets", "J. K. Rowling", "Scholastic", "1998", "2"),
-    ("0747542155", "Harry Potter and the Prisoner of Azkaban", "J. K. Rowling", "Scholastic", "1999", "2"),
-    ("074754624X", "Harry Potter and the Goblet of Fire", "J. K. Rowling", "Scholastic", "2000", "2"),
-    ("0747551006", "Harry Potter and the Order of the Phoenix", "J. K. Rowling", "Scholastic", "2003", "2"),
-    ("0747581088", "Harry Potter and the Half-Blood Prince", "J. K. Rowling", "Scholastic", "2005", "2"),
-    ("0545010225", "Harry Potter and the Deathly Hollows", "J. K. Rowling", "Scholastic", "2007", "2");
+    ("0553213105", "Pride and Prejudice", "Jane Austen", "Public Domain", "1813", "2"),
+    ("0141439475", "Frakenstein", "Mary Wollstonecraft Shelly", "Public Domain", "1818", "2"),
+    ("0393970124", "Dracula", "Bram Stoker", "Public Domain", "1847", "2"),
+    ("0812505042", "The Time Machine", "H.G. Wells", "Public Domain", "1895", "2"),
+    ("1953649807", "The Adventures of Huckleberry Finn", "Mark Twain", "Public Domain", "1884", "2"),
+    ("0140449264", "The Count of Monte Cristo", "Alexandre Dumas", "Public Domain", "1844", "2"),
+    ("0141439602", "A Tale of Two Cities", "Charles Dickens", "Public Domain", "1859", "2"),
+    ("1593080662", "Les Misérables", "Victor Hugo", "Public Domain", "1862", "2"),
+    ("0143039954", "Odyssey", "Homer", "Public Domain", "800", "2"),
+    ("0743273567", "The Great Gatsby", "F. Scott Fitzgerald", "Public Domain", "1925", "2");
+    
 
 -- Non-Fiction
 
 INSERT INTO `Books` VALUES
-    ("014017897X", "Essays", "Michel de Montaigne", "Penguin Books", "1993", "3"),
-    ("0664230806", "Confessions & Enchiridion", "Augustine", "Westminster John Knox Press", "2006", "3");
+    ("0762415983", "The Art of War", "Sun Tzu", "Public Domain", "500", "3"),
+    ("0717802418", "The Communist Manifesto", "Karl Marx", "Public Domain", "1848", "3"),
+    ("0140446362", "Poetics", "Aristotle", "Public Domain", "330", "3"),
+    ("0872204642", "Nicomachean Ethics", "Aristotle", "Public Domain", "340", "3"),
+    ("0679601759", "Thus Spoke Zarathustra", "Friedrich Wilhelm Nietzsche", "Public Domain", "1883", "3"),
+    ("048629868X", "Beyond Good and Evil", "Friedrich Wilhelm Nietzsche", "Public Domain", "1886", "3");
 
 
 -- Textbooks
-INSERT INTO `Books` VALUES
-    ("0393928209", "America: A Narrative History (Seventh Edition) (Vol. 1)", "David E. Shi, George Brown Tindall", "W. W. Norton & Company", "2006", "1");
+-- INSERT INTO `Books` VALUES ();
 
 
     

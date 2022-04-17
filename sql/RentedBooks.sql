@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS RentedBooks (
     `publisher` VARCHAR(100),
     `year` INT,
     `genreID` INT NOT NULL,
-    PRIMARY KEY (`userID`)
+    PRIMARY KEY (`bookISBN`)
 );

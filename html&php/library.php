@@ -50,42 +50,50 @@
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <title>NRs - Library</title>
     </head>
-    <body class="site">
-        <div class="txt-heading"><h3>Books Available To Rent</h3></div>
-        <div class="book-contain">
-            <?php
+    <div class="nav-bar">
+            <ul class="nav-bar">
+                <li><a class="link-space" href="./library.php">All</a></li>
+                <li><a class="link-space" href="./library.php?genre=1">Textbooks</a></li>
+                <li><a class="link-space" href="./library.php?genre=2">Fiction</a></li>
+                <li><a class="link-space" href="./library.php?genre=3">Non-Fiction</a></li>
+                <li><a class="link-space" href="./library.php?genre=4">Comics</a></li>
+            </ul>
+    </div>
+
+    <!-- product-box container will not be looped -->
+    <div class="product-box"> 
+        <?php
             if (!isset($_GET["genre"])) { // If the user wants to view all books...
                 $product_array = $handler->runQuery("SELECT * FROM `Books` ORDER BY 'bookISBN' ASC");
             } else { // If the user wants to view a specific genre...
                 $product_array = $handler->runQuery("SELECT * FROM `Books` WHERE `genreID` = '$_GET[genre]' ORDER BY 'bookISBN' ASC");
             }
-            if (!empty($product_array)) { 
+
+            if (!empty($product_array)) {
                 foreach($product_array as $key=>$value) {
-            ?>
-                <div class="product-item">
+        ?>
+                <div class="product-inner-img">
                     <form method="post" action="library.php?action=add&ISBN=<?php echo $product_array[$key]["bookISBN"]; ?>">
-
-                        <div class="product-image">
-                            <img src="https://covers.openlibrary.org/b/isbn/<?php echo $product_array[$key]["bookISBN"];?>-M.jpg">
-                        </div>
-
-                        <div class="product-tile-footer">
-                            <div class="product-title">
-                                <?php echo $product_array[$key]["bookName"]; ?>
-                            </div>
-
-                            <div class="cart-action">
-                                <input type="submit" value="Rent" class="rentButton" />
-                            </div>
-                        </div>
+                        <input title="Click to rent!" class="product-img" type="image" src="https://covers.openlibrary.org/b/isbn/<?php echo $product_array[$key]["bookISBN"];?>-L.jpg"/>
                     </form>
+                    <p class="info-link">
+                        <span id="info">Book Info</span>
+                        <p class="hidden-info">
+                            Title: <?php echo $product_array[$key]["bookName"];?></br>
+                            Author: <?php echo $product_array[$key]["bookAuthor"];?></br>
+                            Year: <?php echo $product_array[$key]["year"];?></br>
+                            ISBN: <?php echo $product_array[$key]["bookISBN"];?></br>
+                        </p>
+                    </p>
                 </div>
+
             <?php
                 }
             }
             ?>
-        </div>
-        <div class="footer">
+    </div>
+
+    <div class="footer">
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
@@ -100,6 +108,5 @@
                 }?>
                 <a href="./accountinfo.php" class="menu">Account</a>
             </p>
-        </div>
-    </body>
+    </div>
 </html>
