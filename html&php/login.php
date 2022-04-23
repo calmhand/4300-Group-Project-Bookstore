@@ -6,7 +6,7 @@
     $errs = array();
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
-        $pass = $_POST['password'];
+        $pass = md5($_POST['password']);
 
         if (empty($email)) {
             array_push($errs, "Email required.");
@@ -16,9 +16,7 @@
         }
 
         if (count($errs) == 0) { // no errors? log user in.
-            $pass = md5($pass);
             $loginUser = "SELECT * FROM `Users` WHERE `userEmail` = '$email' AND `userPass` = '$pass';";
-            // $ans = mysqli_query($conn, $loginUser);
             $ans = $handler->runQuery($loginUser);
             if ($handler->numRows($loginUser) == 1) {
                 $_SESSION['id'] = $ans[0]['userID'];
@@ -27,7 +25,7 @@
                 setcookie("loggedin", TRUE, time()+6);
                 header('location: index.php');
             } else {
-                array_push($errs, "Wrong email/password combination.");
+                echo '<script>alert("Wrong email/password combination.")</script>';
             }
         }
     }
@@ -38,13 +36,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, inital-scale=1">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="../css/login.css">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <script src="../javascript/login.js"></script>
         <title>NRs - Login</title>
     </head>
     <body>
-        <form id="formStyle" action="./login.php" method="post">
+        <form id="formStyle" name="loginForm" action="./login.php" onsubmit="return validateLoginForm()" method="post">
 
             <div>
                 <label>Email</label><br>

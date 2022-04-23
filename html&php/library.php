@@ -7,19 +7,20 @@
         header('location: login.php');
     } else if ($_SESSION['success'] == 1) {
         if (!empty($_GET["action"])) {
-            if ($_GET["action"] == "add") { // if book is unrented
-                // add book to rented book db
+            if ($_GET["action"] == "add") { // if book is unrented.
+                // add book to rented book db.
                 $code = $_GET["ISBN"];
                 $selectQuery = "SELECT * FROM `Books` WHERE `bookISBN` = '$code'";
                 $row = $handler->runQuery($selectQuery);
 
+                // assign variables.
                 $name = $row[0]['bookName'];
                 $author = $row[0]['bookAuthor'];
                 $publish = $row[0]['publisher'];
                 $year = $row[0]['year'];
                 $genre = $row[0]['genreID'];
 
-                // adds to rentedbook db
+                // adds to rentedbook db.
                 $addQuery = "INSERT INTO `RentedBooks` VALUES (
                     '$_SESSION[id]', 
                     '$code', 
@@ -53,10 +54,9 @@
     <div class="nav-bar">
             <ul class="nav-bar">
                 <li><a class="link-space" href="./library.php">All</a></li>
-                <li><a class="link-space" href="./library.php?genre=1">Textbooks</a></li>
+                <li><a class="link-space" href="./library.php?genre=1">Philosophy</a></li>
                 <li><a class="link-space" href="./library.php?genre=2">Fiction</a></li>
                 <li><a class="link-space" href="./library.php?genre=3">Non-Fiction</a></li>
-                <li><a class="link-space" href="./library.php?genre=4">Comics</a></li>
             </ul>
     </div>
 
@@ -72,21 +72,20 @@
             if (!empty($product_array)) {
                 foreach($product_array as $key=>$value) {
         ?>
-                <div class="product-inner-img">
-                    <form method="post" action="library.php?action=add&ISBN=<?php echo $product_array[$key]["bookISBN"]; ?>">
-                        <input title="Click to rent!" class="product-img" type="image" src="https://covers.openlibrary.org/b/isbn/<?php echo $product_array[$key]["bookISBN"];?>-L.jpg"/>
-                    </form>
-                    <p class="info-link">
-                        <span id="info">Book Info</span>
-                        <p class="hidden-info">
-                            Title: <?php echo $product_array[$key]["bookName"];?></br>
-                            Author: <?php echo $product_array[$key]["bookAuthor"];?></br>
-                            Year: <?php echo $product_array[$key]["year"];?></br>
-                            ISBN: <?php echo $product_array[$key]["bookISBN"];?></br>
+                    <div class="product-inner-img">
+                        <form method="post" action="library.php?action=add&ISBN=<?php echo $product_array[$key]["bookISBN"]; ?>">
+                            <input title="Click to rent!" class="product-img" type="image" src="https://covers.openlibrary.org/b/isbn/<?php echo $product_array[$key]["bookISBN"];?>-L.jpg"/>
+                        </form>
+                        <p class="info-link">
+                            <span id="info">Book Info</span>
+                            <p class="hidden-info">
+                                Title: <?php echo $product_array[$key]["bookName"];?></br>
+                                Author: <?php echo $product_array[$key]["bookAuthor"];?></br>
+                                Year: <?php echo $product_array[$key]["year"];?></br>
+                                ISBN: <?php echo $product_array[$key]["bookISBN"];?></br>
+                            </p>
                         </p>
-                    </p>
-                </div>
-
+                    </div>
             <?php
                 }
             }

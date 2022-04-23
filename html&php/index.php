@@ -24,10 +24,9 @@
             <div class="nav-bar">
                 <ul class="nav-bar">
                     <li><a class="link-space" href="./library.php">All</a></li>
-                    <li><a class="link-space" href="./library.php?genre=1">Textbooks</a></li>
+                    <li><a class="link-space" href="./library.php?genre=1">Philosophy</a></li>
                     <li><a class="link-space" href="./library.php?genre=2">Fiction</a></li>
                     <li><a class="link-space" href="./library.php?genre=3">Non-Fiction</a></li>
-                    <li><a class="link-space" href="./library.php?genre=4">Comics</a></li>
                 </ul>
             </div>
             <div class="outer">
@@ -35,8 +34,8 @@
                     <article class="intro">
                         <p class="text">
                             Welcome to Novel Reads! <br><br>
-                            This is a small online library that hosts a wide array of public domain textbooks, 
-                            novels, and comics.<br><br> 
+                            This is a small online library that hosts a wide array of public domain fiction, 
+                            non-fiction, and philosophy books.<br><br> 
                             The books provided are sourced, for free, from around the internet. <br><br>
                             The goal of this site is to localize books for readers to easily access with worrying about fees or convenience.
                         </p>

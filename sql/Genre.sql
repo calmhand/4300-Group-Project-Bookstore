@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS Genre (
 );
 
 INSERT INTO `Genre` VALUES 
-    ("Textbooks", "1"),
+    ("Philosophy", "1"),
     ("Fiction", "2"),
-    ("NonFiction", "3"),
-    ("Comics", "4");
+    ("NonFiction", "3");
