@@ -17,9 +17,10 @@
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <title>NRs - Read</title>
     </head>
-    <body>
-        <?php echo($_SESSION["currentBook"]); ?>
-        <embed src="../books/<?php echo($_SESSION["currentBook"]); ?>.pdf" width="800px" height="2100px" />
+    
+    <div class="book-window">
+            <embed src="../books/<?php echo($_SESSION["currentBook"]); ?>.pdf#toolbar=0" width="800px" height="2100px" />
+        </div>
 
         <div class="footer">
             <p class="footer-text-left">
@@ -37,5 +38,4 @@
                 <a href="./accountinfo.php" class="menu">Account</a>
             </p>
         </div>
-    </body>
 </html>

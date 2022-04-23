@@ -4,6 +4,16 @@ body {
 	height: 100vh;
 }
 
+/* Reading Window */
+div.book-window {
+    margin: 0px 100px 0px 100px;
+    text-align: center;
+    height: inherit;
+}
+
+embed {
+    height: 95vh;
+}
 
 /* footer */
 .footer {
