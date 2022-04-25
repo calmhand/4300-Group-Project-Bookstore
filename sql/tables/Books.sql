@@ -32,14 +32,11 @@ INSERT INTO `Books` VALUES
     ("0717802418", "The Communist Manifesto", "Karl Marx", "Public Domain", "1848", "3");
 
 
---Philosophy
+-- Philosophy
 INSERT INTO `Books` VALUES
     ("0140446362", "Poetics", "Aristotle", "Public Domain", "330", "1"),
     ("0872204642", "Nicomachean Ethics", "Aristotle", "Public Domain", "340", "1"),
     ("0679601759", "Thus Spoke Zarathustra", "Friedrich Wilhelm Nietzsche", "Public Domain", "1883", "1"),
-    ("0140449140", "The Republic", "Plato", "Public Domain", "375", "3"),
+    ("0140449140", "The Republic", "Plato", "Public Domain", "375", "1"),
     ("048629868X", "Beyond Good and Evil", "Friedrich Wilhelm Nietzsche", "Public Domain", "1886", "1");
-    
-
-
     

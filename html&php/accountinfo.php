@@ -66,8 +66,6 @@
         <div class='accountDetails'>
             <h5>Email: <?php echo $_SESSION['email'] ?></h5>
             <h5>Account ID: <?php echo $_SESSION['id'] ?></h5>
-            <!-- <h4>First Name: </h4>
-            <h4>Last Name: </h4> -->
         </div>
 
         <div>
@@ -95,7 +93,7 @@
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
-                <a href="./about.php" class="menu">About</a> <!-- change later -->
+                <a href="./about.php" class="menu">About</a>
             </p>
             <p class="footer-text-right">
                 <?php 

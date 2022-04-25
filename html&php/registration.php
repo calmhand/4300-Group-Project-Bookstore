@@ -1,5 +1,5 @@
 <?php 
-    require_once "../php/connectToDBAdmin.php"; // replace w/ login for all admins
+    require_once "../php/connectToDBAdmin.php";
     $handler = new NovelConnection();
 
     $first = $last = $email = $mobile = $pass = $confirm_pass = "";
@@ -93,7 +93,7 @@
             <p class="footer-text-left">
                 <a href="./index.php" class="menu">Home</a>
                 <a href="./library.php" class="menu">Books</a>
-                <a href="./about.php" class="menu">About</a> <!-- change later -->
+                <a href="./about.php" class="menu">About</a>
             </p>
             <p class="footer-text-right">
                 <?php 
