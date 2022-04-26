@@ -29,12 +29,12 @@ function validateRegistration() {
     }
 
     // if the passwords match
-    x = document.forms["registerForm"]["password"].value;
-    y = document.forms["registerForm"]["cpassword"].value;
-    if (!x.localeCompare(y)) {
-        alert("Passwords do not match.");
-        return false;
-    }
+    // x = document.forms["registerForm"]["password"].value;
+    // y = document.forms["registerForm"]["cpassword"].value;
+    // if (!x.localeCompare(y)) {
+    //     alert("Passwords do not match.");
+    //     return false;
+    // }
 
     return true; // if validation passes.
 } // validateRegistration
