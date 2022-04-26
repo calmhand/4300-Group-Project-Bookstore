@@ -52,7 +52,7 @@
         <title>NRs - Registration</title>
     </head>
     <body>
-        <form class="formStyle" name="registerForm" action="registration.php" onsubmit="return validateRegistration()" method="post">
+        <form class="formStyle" name="registerForm" action="registration.php" onsubmit="" method="post">
             <p style="font-size:large;">Have an account? <a href="login.php">Login</a></p>
             <div>
                 <label>First Name</label><br>
