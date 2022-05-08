@@ -88,6 +88,7 @@
                 <input type="submit" name="register" value="Register">
             </div><br><br>
             <br>
+        </form>
 
         <div class="footer">
             <p class="footer-text-left">

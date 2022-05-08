@@ -6,7 +6,7 @@ This web application is a small-scale library that hosts public domain literatur
 
 Books will be read via a browser's built-in PDF viewer.
 
-This site hosts a generous collection of famous fiction, non-fiction and philosophical works from greats minds of the past.
+This site hosts a generous collection of famous fiction, non-fiction and philosophical works from great minds of the past.
 
 This site has been tested on Firefox and Chrome via DevTools.
 
@@ -45,24 +45,6 @@ Project Requirements (as stated from the eLC document):
 (Validation For Logging In and Registering an Account)
 4 SQL Entities In Use
 (Tables for Rented Books, Available Books, Genres for Books, and Registered Users)
-
-<b>SEE PROJECT PLAN PROPOSAL PDF FOR GUIDANCE</b>
-
-Next Assignment: Presentation.
-
-Deliverable Links: 
-
-GAANT Group Schedule: https://docs.google.com/spreadsheets/d/1y6GsNiQluFIaRh6FgEpaM1wcxBg_5p3eRU-NrzwQEEk/edit?usp=sharing
-
-CRUD Matrix Example: http://www.unified-am.com/UAM/UAM/guidances/guidelines/uam_crud-matrix_F56BDB11.html
-
-UML/GDD Diagram: https://docs.google.com/document/d/1CJcnRiGcdRcvcquHwxfAKaoXLzCL7Jgu1pRIuxpa_Ok/edit?usp=sharing
-
-ER Diagram (Account Required): https://lucid.app/lucidchart/fb2668ea-7a30-4ebf-a324-e209eaf1822b/edit?invitationId=inv_4396944a-c42a-4528-a4f1-26b0134b23d8
-
-Relational Schema Example (Required for ER Diagram): https://www.geeksforgeeks.org/relation-schema-in-dbms/
-
-ER/Relation Diagrams (Google Doc): https://docs.google.com/document/d/1AQrUnhA19POXkxTkROAFGiuhqtJKnfJDx7UUG1KeMFs/edit?usp=sharing
 
 Group Contacts:
 

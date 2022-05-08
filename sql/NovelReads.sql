@@ -77,7 +77,3 @@ INSERT INTO `Books` VALUES
     ("0140449140", "The Republic", "Plato", "Public Domain", "375", "1"),
     ("048629868X", "Beyond Good and Evil", "Friedrich Wilhelm Nietzsche", "Public Domain", "1886", "1");
     
-
-
-
-
