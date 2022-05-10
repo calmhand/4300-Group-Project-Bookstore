@@ -70,7 +70,7 @@
                 <a href="./library.php" class="menu">Books</a>
                 <a href="./about.php" class="menu">About</a>
             </p>
-            <p class="footer-text-right">s
+            <p class="footer-text-right">
                 <?php 
                 if (isset($_SESSION['success']) || $_SESSION['success'] == 1) {
                 ?>
