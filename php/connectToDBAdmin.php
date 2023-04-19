@@ -42,7 +42,7 @@ class NovelConnection {
 			return $resultset;
 	}
 
-    function executeSingleQuery($query) {
+    	function executeSingleQuery($query) {
 		mysqli_query($this->conn,$query);
 	}
 	
